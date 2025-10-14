@@ -1,56 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>North Pine Football 2025</title>
+head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Plymouth Football 2025</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f5f7fa; margin: 0; color: #222; }
-    header { text-align: center; padding: 40px 20px; background: #14213d; color: white; }
-    h1 { margin: 0; font-size: 2.5em; }
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 40px; }
-    .card { background: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; }
-    .card video { width: 100%; cursor: pointer; }
-    .card .info { padding: 10px; display: flex; justify-content: space-between; align-items: center; }
-    button, a.btn {
-      background: #007bff; color: white; border: none; padding: 8px 12px;
-      border-radius: 6px; cursor: pointer; text-decoration: none;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f7fa;
+      color: #222;
     }
-    button:hover, a.btn:hover { background: #0056b3; }
-    .modal { display: none; position: fixed; z-index: 10; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
-    .modal video { width: 90%; max-width: 1200px; }
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: #14213d;
+      color: white;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .card video {
+      width: 100%;
+      cursor: pointer;
+      background: black;
+    }
+    .info {
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    button, a.btn {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    button:hover, a.btn:hover {
+      background: #0056b3;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal video {
+      width: 90%;
+      max-width: 1200px;
+      max-height: 90%;
+    }
+    .password-prompt {
+      text-align: center;
+      margin-top: 100px;
+    }
   </style>
 </head>
 <body>
+  <script>
+    // Basic (not secure) password check
+    const password = prompt("Enter password to view videos:");
+    if (password !== "grims2025") {
+      document.body.innerHTML = "<h2 style='text-align:center;margin-top:100px;'>Access denied</h2>";
+      throw "Access denied";
+    }
+  </script>
+
   <header>
-    <h1>North Pine Football 2025</h1>
-    <p>Game Replays • HD / 4K Streaming</p>
+    <h1>New Plymouth Football 2025</h1>
+    <p>3rd & 4th Grade Grims Replays • HD Streaming</p>
   </header>
 
   <div class="gallery">
+    <!-- Video Card 1 -->
     <div class="card">
-      <video src="https://npfootballvids.s3.amazonaws.com/videos/NP%20vs%20Weiser%20(10-08).mp4" onclick="openModal(this.src)" poster="thumbnail1.jpg"></video>
+      <video
+        src="https://npfootballvids.s3.amazonaws.com/videos/Game3.mp4"
+        poster="hero.png"
+        onclick="openModal(this.src)"
+        muted
+      ></video>
+      <div class="info">
+        <span>NP vs Vale (9/29)</span>
+        <a class="btn"
+           href="https://npfootballvids.s3.amazonaws.com/videos/Game3.mp4"
+           download>Download</a>
+      </div>
+    </div>
+    <!-- Video Card 2 -->
+    <div class="card">
+      <video
+        src="https://npfootballvids.s3.us-west-2.amazonaws.com/videos/NP%20vs%20Nyssa%20(10-06).mp4
+"
+        poster="hero.png"
+        onclick="openModal(this.src)"
+        muted
+      ></video>
+      <div class="info">
+        <span>NP vs Nyssa (10/06)</span>
+        <a class="btn"
+           href="https://npfootballvids.s3.us-west-2.amazonaws.com/videos/NP%20vs%20Nyssa%20(10-06).mp4
+"
+           download>Download</a>
+      </div>
+    </div>
+
+    <!-- Video Card 3 -->
+    <div class="card">
+      <video
+        src="https://npfootballvids.s3.us-west-2.amazonaws.com/videos/NP+vs+Weiser+(10-08).mp4"
+        poster="hero.png"
+        onclick="openModal(this.src)"
+        muted
+      ></video>
       <div class="info">
         <span>NP vs Weiser (10/08)</span>
-        <a class="btn" href="https://npfootballvids.s3.amazonaws.com/videos/NP%20vs%20Weiser%20(10-08).mp4" download>Download</a>
+        <a class="btn"
+           href="https://npfootballvids.s3.us-west-2.amazonaws.com/videos/NP+vs+Weiser+(10-08).mp4"
+           download>Download</a>
       </div>
     </div>
 
-    <div class="card">
-      <video src="https://npfootballvids.s3.amazonaws.com/videos/Game2.mp4" onclick="openModal(this.src)" poster="thumbnail2.jpg"></video>
-      <div class="info">
-        <span>Game 2</span>
-        <a class="btn" href="https://npfootballvids.s3.amazonaws.com/videos/Game2.mp4" download>Download</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <video src="https://npfootballvids.s3.amazonaws.com/videos/Game3.mp4" onclick="openModal(this.src)" poster="thumbnail3.jpg"></video>
-      <div class="info">
-        <span>Game 3</span>
-        <a class="btn" href="https://npfootballvids.s3.amazonaws.com/videos/Game3.mp4" download>Download</a>
-      </div>
-    </div>
+    
   </div>
 
   <div class="modal" id="modal" onclick="closeModal()">
@@ -69,6 +163,7 @@
       const modal = document.getElementById('modal');
       const video = document.getElementById('modalVideo');
       video.pause();
+      video.src = "";  // clear source
       modal.style.display = 'none';
     }
   </script>
