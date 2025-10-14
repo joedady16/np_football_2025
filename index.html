@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>North Pine Football 2025</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f7fa; margin: 0; color: #222; }
+    header { text-align: center; padding: 40px 20px; background: #14213d; color: white; }
+    h1 { margin: 0; font-size: 2.5em; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 40px; }
+    .card { background: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; }
+    .card video { width: 100%; cursor: pointer; }
+    .card .info { padding: 10px; display: flex; justify-content: space-between; align-items: center; }
+    button, a.btn {
+      background: #007bff; color: white; border: none; padding: 8px 12px;
+      border-radius: 6px; cursor: pointer; text-decoration: none;
+    }
+    button:hover, a.btn:hover { background: #0056b3; }
+    .modal { display: none; position: fixed; z-index: 10; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
+    .modal video { width: 90%; max-width: 1200px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>North Pine Football 2025</h1>
+    <p>Game Replays • HD / 4K Streaming</p>
+  </header>
+
+  <div class="gallery">
+    <div class="card">
+      <video src="https://npfootballvids.s3.amazonaws.com/videos/NP%20vs%20Weiser%20(10-08).mp4" onclick="openModal(this.src)" poster="thumbnail1.jpg"></video>
+      <div class="info">
+        <span>NP vs Weiser (10/08)</span>
+        <a class="btn" href="https://npfootballvids.s3.amazonaws.com/videos/NP%20vs%20Weiser%20(10-08).mp4" download>Download</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <video src="https://npfootballvids.s3.amazonaws.com/videos/Game2.mp4" onclick="openModal(this.src)" poster="thumbnail2.jpg"></video>
+      <div class="info">
+        <span>Game 2</span>
+        <a class="btn" href="https://npfootballvids.s3.amazonaws.com/videos/Game2.mp4" download>Download</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <video src="https://npfootballvids.s3.amazonaws.com/videos/Game3.mp4" onclick="openModal(this.src)" poster="thumbnail3.jpg"></video>
+      <div class="info">
+        <span>Game 3</span>
+        <a class="btn" href="https://npfootballvids.s3.amazonaws.com/videos/Game3.mp4" download>Download</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal" onclick="closeModal()">
+    <video id="modalVideo" controls></video>
+  </div>
+
+  <script>
+    function openModal(src) {
+      const modal = document.getElementById('modal');
+      const video = document.getElementById('modalVideo');
+      video.src = src;
+      modal.style.display = 'flex';
+      video.play();
+    }
+    function closeModal() {
+      const modal = document.getElementById('modal');
+      const video = document.getElementById('modalVideo');
+      video.pause();
+      modal.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
